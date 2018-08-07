@@ -62,3 +62,21 @@ var app = new Vue({
   el: "#vue-app",
   router: router
 });
+
+
+
+// When a name is clicked, that should toggle
+// the showing/hiding of the bio.
+
+
+
+
+
+
+
+
+
+
+
+
+
