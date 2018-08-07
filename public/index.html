@@ -20,14 +20,15 @@
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
+    <h1>Number of People: {{ people.length }}</h1>
 
-    <p v-for="person in people"> {{ person.name }} --- {{ person.bio }}</p>
+    <p v-for="person in people"> {{ person.name }} --- {{ person.bio }} <button v-on:click="removePerson(person)">Delete Person</button></p>
     <div>
       <p> Add a new person: </p>
       name: <input v-model="newPerson.name">
       bio: <input v-model="newPerson.bio">
-      <button v-on:click="addPerson()">Add person</button>
+      <button v-on:click="addPerson(); counter += 1;">Add person</button>
+      <p>Number of people added: {{counter}}</p>
     </div>
    
 

@@ -22,19 +22,30 @@ var HomePage = {
           bioVisible: true
         }
       ],
-      newPerson: {name: "", bio: ""}
+      newPerson: {name: "", bio: "", bioVisible: true},
+      counter: 0
     };
   },
   created: function() {},
   methods: {
+    removePerson: function(inputPerson) {
+      // find the index of inputPerson
+      var index = this.people.indexOf(inputPerson);
+      // spice to delete, index is var above, 1 is how many you want to delete
+      this.people.splice(index, 1);
+    },
     addPerson: function() {
       console.log('adding a person');
+  
 
-      var newPersonInfo = {
-        name: this.newPerson.name,
-        bio: this.newPerson.bio 
-      };
-      this.people.push(newPersonInfo);
+      this.people.push(this.newPerson);
+      // var newPersonInfo = {
+      //   name: this.newPerson.name,
+      //   bio: this.newPerson.bio 
+      // };
+      // this.people.push(newPersonInfo);
+      
+      this.newPerson = {text: "", bio: ""};
     }
   },
   computed: {}
